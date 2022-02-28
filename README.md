@@ -114,7 +114,7 @@ In order to get help the flag `--help` will display the help about the current c
 
 ```sh
 $ git changelog -h
-git-changelog 0.1.0
+git-changelog 0.2.1
 
 USAGE:
     git-changelog [FLAGS] [OPTIONS]
