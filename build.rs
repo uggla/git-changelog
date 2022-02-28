@@ -32,7 +32,12 @@ pub fn main() -> Result<(), Box<dyn Error + Send + Sync>> {
         )
         .as_bytes(),
     )
-        .map_err(|err| format!("could not write build date in file 'src/version.rs', {}", err))?;
+    .map_err(|err| {
+        format!(
+            "could not write build date in file 'src/version.rs', {}",
+            err
+        )
+    })?;
     file.write(format!("pub(crate) const GITHASH: &str = \"{}\";\n", identifier).as_bytes())
         .map_err(|err| format!("could not write githash in file 'src/version.rs', {}", err))?;
     file.write(format!("pub(crate) const PROFILE: &str = \"{}\";\n", profile).as_bytes())

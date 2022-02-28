@@ -26,13 +26,9 @@ impl TryFrom<PathBuf> for Configuration {
     type Error = Box<dyn Error + Send + Sync>;
 
     fn try_from(path: PathBuf) -> Result<Self, Self::Error> {
-        let mut conf = Config::default();
-
-        conf.merge(File::from(path).required(true))
-            .map_err(|err| format!("could not configure the file constraint, {}", err))?;
-
-        Ok(conf
-            .try_into::<Self>()
-            .map_err(|err| format!("could not cast data structure into configuration, {}", err))?)
+        Ok(Config::builder()
+            .add_source(File::from(path).required(true))
+            .build()?
+            .try_deserialize()?)
     }
 }

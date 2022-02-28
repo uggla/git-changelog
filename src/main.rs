@@ -103,7 +103,7 @@ fn main(args: Args) -> Result<(), Box<dyn Error + Send + Sync>> {
     let mut output = args.output;
 
     output.set_extension(extension);
-    let mut file = File::create(output.to_owned())
+    let mut file = File::create(&output)
         .map_err(|err| format!("could not create file '{:?}', {}", output, err))?;
 
     file.write_all(content.as_bytes())

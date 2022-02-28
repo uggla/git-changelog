@@ -156,7 +156,7 @@ impl TryFrom<(&HashMap<String, String>, &conf::Repository)> for Repository {
         match &conf.range {
             Some(range) => {
                 revwalk
-                    .push_range(&range)
+                    .push_range(range)
                     .map_err(|err| format!("could not parse commit range, {}", err))?;
             }
             None => {
@@ -204,10 +204,9 @@ impl TryFrom<(&HashMap<String, String>, &conf::Repository)> for Repository {
                     .as_str(),
             );
 
-            let scope = match captures.name("scope") {
-                Some(scope) => Some(String::from(scope.as_str())),
-                None => None,
-            };
+            let scope = captures
+                .name("scope")
+                .map(|scope| String::from(scope.as_str()));
 
             if !kinds.contains_key(&kind) {
                 warn!("Kind is not contained in provided kinds"; "hash" => &hash, "kind" => kind);
