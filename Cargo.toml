@@ -8,22 +8,22 @@ edition = "2018"
 
 [dependencies]
 askama = "^0.11.1"
-git2 = "^0.14.0"
+git2 = "^0.14.2"
 structopt = { version = "^0.3.26", features = ["paw"] }
 chrono = "^0.4.19"
-config = "^0.12.0"
+config = "^0.13.0"
 serde = { version = "^1.0.136", features = ["derive"] }
 slog = "^2.7.0"
 slog-term = "^2.9.0"
 slog-async = "^2.7.0"
 slog-scope = "^4.4.0"
-regex = "^1.5.4"
+regex = "^1.5.5"
 strfmt = "^0.1.6"
 paw = "^1.0.0"
 
 [build-dependencies]
 askama = "^0.11.1"
-git2 = "^0.14.0"
+git2 = "^0.14.2"
 chrono = "^0.4.19"
 
 [profile.release]
