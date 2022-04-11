@@ -4,7 +4,7 @@ description = "Generate a changelog using the git commit history"
 version = "0.2.1"
 authors = ["Florentin DUBOIS <florentin.dubois@hey.com>"]
 build = "build.rs"
-edition = "2018"
+edition = "2021"
 
 [dependencies]
 askama = "^0.11.1"
