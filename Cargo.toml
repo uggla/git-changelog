@@ -11,7 +11,7 @@ askama = "^0.11.1"
 git2 = "^0.14.2"
 structopt = { version = "^0.3.26", features = ["paw"] }
 chrono = "^0.4.19"
-config = "^0.13.0"
+config = "^0.13.1"
 serde = { version = "^1.0.136", features = ["derive"] }
 slog = "^2.7.0"
 slog-term = "^2.9.0"
