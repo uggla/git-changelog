@@ -145,3 +145,7 @@ git tag -a [-s] vX.Y.Z
 ```
 
 This will open an editor to add a message on the git tag.
+
+### Template changes
+
+If you want to change the mjml file, you will have to rebuild git-changelog to apply your modification.
