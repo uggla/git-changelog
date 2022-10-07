@@ -25,7 +25,7 @@ You can find the released binary in the `target/release` folder.
 
 ## Configuration
 
-An example of the `policy.toml` file used to generate the changelog:
+An example of the `changelog.toml` file used to generate the changelog:
 
 ```toml
 # Kinds are based on https://github.com/angular/angular/blob/master/CONTRIBUTING.md#type
